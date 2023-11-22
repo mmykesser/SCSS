@@ -1,0 +1,319 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './mixins.scss';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: $font;
+    border:none;
+    background:transparent;
+    list-style: none;
+    text-decoration: none;
+}
+
+.menu{
+    @include flex(center, center, 10px);
+}
+
+
+.nav{
+    background-color: $lighter-gray;
+    >.menu{
+         >.menu-item{
+            padding: 17px 10px;
+            font-weight: $regular;
+         }
+    }
+}
+
+.nav2{
+    background-color:$white;
+    border-top: 1px solid $light-gray;
+        >.menu{
+                >.menu-item2{
+                    padding: 30px 15px;
+                    font-weight: $regular;
+                }
+        }
+}
+
+.sale{
+    @include flex(center, center, 0);
+    width:100%;
+    max-height: 604px;
+        >img{
+            width:100%;
+            max-height: 604px;
+        }
+            >.sale__conteiner{
+                @include flex(center, none, 0);
+                position: absolute;
+                right: 56%;
+            }
+    }
+
+
+
+.sale__card{
+    @include flex(flex-start, none, 50px);
+    flex-direction:column;
+    z-index: 1;
+        &__title{
+            @include text($white, 48px, $bold, none);
+        }
+
+        &__text{
+            @include text($white, none, $regular, 142%);
+            width: 70%;
+        }
+
+        &__btn{
+            @include text($white, none, $regular, none);
+            border: 2px solid $white;
+            background-color: $accent;
+            border-radius: 40px;
+            padding: 12px 70px;
+            text-align: center;
+            font-weight:$regular;
+            letter-spacing: 0.7px;
+        }
+}
+
+.callback{
+    @include flex(center, space-around, 0);
+    padding: 20px 0;
+}
+
+.logo{
+    @include flex(center, center, 20px);   
+
+    &__text{
+        @include text($accent, 36px, $bold, none);
+        text-transform: uppercase;
+        letter-spacing: 3.6px;
+    }
+}
+
+.cta{
+    @include flex(center,center,40px);
+
+    >a{
+        @include text($dark, 16px, $regular, none);
+    }
+}
+
+.cta_btn{
+    @include text($dark, none, $regular, none);
+        border:2px solid $accent;
+        background-color: $white;
+        border-radius: 40px;
+        padding: 8px 50px;
+}
+
+.special{
+    background-color:$lighter-gray;
+    padding: 80px 0 0 0;
+    width: 100%;
+}
+
+.container{
+    @include flex(center, none, none);
+    padding: 0 5%;
+    flex-direction: column;
+}
+
+.goods{
+        @include flex(center, none, none);
+        background-color: $lighter-gray;
+        flex-direction: column;
+        width: 100%;
+
+    &>.special__title{
+        @include text(none, 24px, $bold,none);
+        background-color:$lighter-gray;
+        padding-bottom: 38px;
+        width: 80%;
+        align-self:center;
+    }
+    &>.special__good-list{
+        @include flex(center, center, 30px);
+        width: 80%;
+            &>.special_item{
+            @include flex(center, center, 20px);
+            flex-direction: column;
+            padding: 25px;
+            background-color: $white;
+
+            &> img{
+                width: 125px;
+            }
+
+            &>.special_name{
+                @include text($dark-gray, none, $regular, 140%);
+                text-align: center;
+                width: 80%;
+            }
+            &>.special_price{
+                @include text($dark, 21px, $medium,none);
+                letter-spacing: 1.05px;
+                text-align: center;
+            }
+            &>.special_btn{
+                border-radius:30px;
+                background-color:$accent;
+                color:$white;
+                letter-spacing: 0.7px;
+                padding: 9px 53px;
+            }
+
+        }
+    }
+
+}
+
+.promo{
+    @include flex(stretch, center,30px);
+    width: 90%;
+    margin: 100px 0;
+    >.promo__card{
+        @include flex(center,none, 45px);
+        background-color:$accent;
+        padding: 35px 40px;
+        &>.promo__content{
+            @include flex(flex-start, none, 20px);
+            flex-direction: column;
+            &>.promo__name{
+                @include text($white, 18px, $bold, none);
+            }
+            &>.promo__text{
+                @include text($white, none, $regular, 155%);
+                width: 60%;
+            }
+            &>.promo__input{
+                @include text($dark,none,$regular,none);
+                width: 215px;
+                padding: 9px 0 9px 25px;
+                background-color: $white;
+                border-radius:30px;
+                ::placeholder{
+                    color: $lighter-gray;
+                }
+            }
+            &>.promo__btn{
+                @include text($white, none, $regular, none);
+                padding: 9px 53px;
+                border: 2px solid $white;
+                border-radius:30px;
+            }
+            &>.img{
+                max-width: 189px;
+            }
+        }
+    }
+}
+
+.brand{
+    @include flex(center, center, 0);
+    margin-bottom: 80px;
+    >.brands{
+        @include flex(center,center, 0);
+        flex-direction: column;
+         
+        >.brands_list{
+            @include flex(center, none,0);
+            padding: 35px 63px;
+            background-color: $white;
+            border-bottom: 1px solid $light-gray;
+            border-left: 1px solid $light-gray;
+            border-right: 1px solid $light-gray;
+
+            &:last-child{
+            border-bottom: none;
+            }
+        }
+    }
+}
+
+.footer{
+    margin-top: 80px;
+    background-color:$white;
+    >.footer__container{
+        @include flex(center, center, 0);
+        background-color:$white;
+        >.footer_card{
+            @include flex(center,space-evenly,0);
+            background-color: $white;
+            padding: 60px 0;
+            width: 78%;
+            >.footer_content{
+                @include flex(flex-start, center,0);
+                flex-direction: column;
+                >.footer_title{
+                    @include text ($dark, 16px, $medium, 140%);
+                    width: 55%;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid $lighter-gray;
+                }
+                >.footer_text{
+                    @include text ($gray,12px,$regular,233%);
+                    width: 35%;
+                    padding: 25px 0 0 0;
+                }
+            }
+        }
+    }
+    >.footer_info{
+        @include flex (center, space-around, 0);
+        flex-direction: row;
+        padding: 38px 0;
+        border-top: 1px solid $light-gray;
+        >.footer_social{
+            @include flex(none, none, 20px);
+        }
+    }
+}
+
+.footer_end{
+    @include flex(center,space-around, 0);
+    flex-direction: row;
+    background-color:$lighter-gray;
+    >.Best_Store{
+        @include text($gray, 12px, $regular, none);
+        padding: 25px 0;
+    }
+
+    >.Privacy{
+        @include text($gray, 12px, $regular, none);
+        text-align: right;
+    }
+}
+
+
+
+
+
+
+
+
+                        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
